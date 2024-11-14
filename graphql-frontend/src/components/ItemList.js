@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery, gql } from '@apollo/client';
+import '../styles/style.css'; // Adjust the path as needed
 
 const GET_ITEMS = gql`
   query GetItems {
@@ -18,13 +19,22 @@ function ItemList() {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <ul>
-      {data.items.map((item) => (
-        <li key={item.id}>
-          {item.name}: {item.description}
-        </li>
-      ))}
-    </ul>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {data.items.map((item) => (
+      <tr key={item.id}>
+        <td>{item.name}</td>
+        <td>{item.description}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
   );
 }
 

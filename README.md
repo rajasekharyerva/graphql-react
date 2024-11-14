@@ -10,7 +10,6 @@
         schema.js           # Defines GraphQL schema
         resolvers.js        # Defines resolvers for GraphQL queries and 
     Dockerfile
-    docker-compose.yml
     .env
     package.json
 
@@ -23,9 +22,11 @@
         ItemList.js         # Component for listing items
         ItemForm.js         # Component for adding/editing items
     package.json
+    Dockerfile
 
   .gitignore                 # Git ignore file for the entire repo
   README.md                  # Project documentation
+  docker-compose.yml
 
 
 ### Start the Backend Server with Docker
